@@ -1,0 +1,4 @@
+#!/bin/zsh
+/mnt/c/Users/meuge/scoop/apps/neovide/current/neovide.exe --wsl &
+
+
