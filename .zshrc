@@ -21,7 +21,7 @@ zinit light zsh-users/zsh-autosuggestions
 autoload -Uz compinit && compinit
 
 #alias
-alias ls="exa"
+alias ls="eza"
 alias lg="lazygit"
 
 # History
