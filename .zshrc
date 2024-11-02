@@ -23,6 +23,7 @@ autoload -Uz compinit && compinit
 #alias
 alias ls="eza"
 alias lg="lazygit"
+alias lt="eza --tree"
 
 # History
 HISTSIZE=5000
@@ -36,6 +37,9 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
+
+unalias zi
+eval "$(zoxide init --cmd cd zsh)"
 
 cd ~
 
