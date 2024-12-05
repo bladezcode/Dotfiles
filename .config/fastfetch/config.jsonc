@@ -1,12 +1,12 @@
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
-    "type": "raw",
+    //"recache": true,
+    "type": "sixel",
     "source": "~/.config/fastfetch/images/girl.sixel",
     "width": 30,
     "padding": {
-      "top": 0,
-      "left": 2,
+      //"left": 0,
       "right": 2
     }
     },
@@ -25,7 +25,6 @@
     },
     
     "modules": [
-        "break",
         {
             "format": "{#1}{#keys}╭{$1}╮\u001b[76D {user-name-colored}{at-symbol-colored}{host-name-colored} 🖥  ",
             "type": "title"
@@ -61,8 +60,8 @@
         {
             "key": "{$2}{#32}󰍛 cpu      ",
             "type": "cpu",
-            "showPeCoreCount": true,
-            "temp": true
+            "showPeCoreCount": false,
+            "temp": false
         },
         {
             "key": "{$2}{#32}󰍛 gpu      ",

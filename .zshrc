@@ -3,6 +3,11 @@ export PATH=$PATH:/home/bladez/.local/bin
 export PATH="$PATH:/opt/nvim-linux64/bin"
 export PATH="$PATH:/usr/local/bin"
 export PATH=$PATH:~/bin
+export PATH=$PATH:~/.cargo/bin
+
+export EDITOR=nvim
+
+export FZF_CTRL_R_OPTS="--height 40% --border --layout=reverse"
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
@@ -24,6 +29,7 @@ autoload -Uz compinit && compinit
 alias ls="eza"
 alias lg="lazygit"
 alias lt="eza --tree"
+alias nv="nvim"
 
 # History
 HISTSIZE=5000
@@ -41,7 +47,10 @@ setopt hist_find_no_dups
 unalias zi
 eval "$(zoxide init --cmd cd zsh)"
 
-cd ~
+if [[ -o interactive ]] && [[ -z "$TMUX" ]]; then
+    fastfetch
+fi
+
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
